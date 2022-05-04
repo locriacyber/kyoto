@@ -26,6 +26,10 @@ extern "C" {
 #include <lauxlib.h>
 }
 
+#if LUA_VERSION_NUM >= 502
+static constexpr auto lua_objlen = lua_rawlen;
+#endif
+
 
 /* precedent type declaration */
 struct ScriptProcessorCore;
